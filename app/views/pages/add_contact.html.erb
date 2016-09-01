@@ -2,19 +2,19 @@
 
 <%= form_tag '/add_contact', method: :post do %>
   <div>
-    <%= label_tag :first_name, 'Enter:'%>
+    <%= label_tag :first_name %>
     <%= text_field_tag :first_name, nil, placeholder: 'first name' %>
   </div>
     <div>
-    <%= label_tag :last_name, 'Enter:'%>
+    <%= label_tag :last_name %>
     <%= text_field_tag :last_name, nil, placeholder: 'last name' %>
   </div>
     <div>
-    <%= label_tag :email, 'Enter:'%>
+    <%= label_tag :email %>
     <%= text_field_tag :email, nil, placeholder: 'email' %>
   </div>
     <div>
-    <%= label_tag :phone, 'Enter:'%>
+    <%= label_tag :phone %>
     <%= text_field_tag :phone, nil, placeholder: 'phone number' %>
   </div>
   <div>
