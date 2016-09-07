@@ -4,5 +4,7 @@
 <h1><%= @contact.phone_number%></h1>
 
 <%= link_to 'home', '/' %>
+<br>
 <%= link_to 'edit', "/contacts/#{@contact.id}/edit" %>
-<%= link_to 'delete', "/contacts/#@contact.id}", method: :delete %> 
+<br>
+<%= link_to 'delete', "/contacts/#{@contact.id}", method: :delete %> 

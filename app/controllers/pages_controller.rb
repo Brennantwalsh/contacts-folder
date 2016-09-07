@@ -12,7 +12,7 @@ class PagesController < ApplicationController
                            last_name: params[:last_name],
                            email: params[:email],
                            phone_number: params[:phone_number])
-
+    flash[:success] = "There is a new one here"
     redirect_to '/contacts/#{@contact.id}'
   end
 
@@ -30,14 +30,14 @@ class PagesController < ApplicationController
                     last_name: params[:last_name],
                     email: params[:email],
                     phone_number: params[:phone_number])
-
+    flash[:success] = "done!"
     redirect_to '/contacts/#{@contact.id}'
   end
 
   def destroy
     @contact = Contact.find(params[:id])
     @contact.destroy
+    flash[:warning] = "it is gone forever"
+    redirect_to '/contacts'
   end
-
-  redirect_to '/'
 end
