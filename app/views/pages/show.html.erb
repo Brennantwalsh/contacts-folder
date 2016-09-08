@@ -1,7 +1,7 @@
-<h1> <%= @contact.first_name %> </h1>
-<h1> <%= @contact.last_name %></h1>
+<h6><%= @contact.friendly_updated_at %></h6>
+<h1><%= @contact.full_name %></h1>
 <h1><%= @contact.email%></h1>
-<h1><%= @contact.phone_number%></h1>
+<h1><%= @contact.regional_phone_number%></h1>
 
 <%= link_to 'home', '/' %>
 <br>
