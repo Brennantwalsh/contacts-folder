@@ -4,10 +4,10 @@ class Contact < ApplicationRecord
   end
 
   def full_name
-    first_name + " " + last_name
+    first_name + " " + middle_name.to_s + " " + last_name
   end
 
   def regional_phone_number
-    "+81 " + phone_number
+    "+81 " + phone_number.to_s
   end
 end
