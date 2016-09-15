@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-
+  before_action :authenticate_user!
   def index
     @contacts = Contact.all
   end
@@ -8,12 +8,13 @@ class PagesController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(first_name: params[:first_name],
-                           last_name: params[:last_name],
-                           middle_name: params[:middle_name],
-                           bio: params[:bio],
-                           email: params[:email],
-                           phone_number: params[:phone_number])
+    @contact = Contact.create(first_name: params[:first_name],
+                              last_name: params[:last_name],
+                              middle_name: params[:middle_name],
+                              bio: params[:bio],
+                              email: params[:email],
+                              phone_number: params[:phone_number],
+                              user_id: current_user.id)
     flash[:success] = "There is a new one here"
     redirect_to '/contacts/#{@contact.id}'
   end

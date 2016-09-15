@@ -1,8 +1,18 @@
+<div class ="class">
+  
 <% @contacts.each do |contact| %>
-  <h2><%= link_to contact.full_name, "/contacts/#{contact.id}" %></h2>
-  <h3><%= contact.bio %></h3>
-  <h3><%= contact.email %></h3>
-  <h3><%= contact.regional_phone_number %></h3>
-  <br>
-<% end %>
+  <% if contact.user_id == current_user.id  %>
+    <div class = "col-md-4">
+      <div class="well thumbnail index-list">
+        <h2><%= link_to contact.full_name, "/contacts/#{contact.id}" %></h2>
+        <h3><%= contact.bio %></h3>
+        <h3><%= contact.email %></h3>
+        <h3><%= contact.regional_phone_number %></h3>
+        <br>
+        </div>
+    </div>
+   <% end %>
+    
+  <% end %>
+</div>
 
