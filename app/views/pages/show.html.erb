@@ -4,6 +4,12 @@
 <h1><%= @contact.email%></h1>
 <h1><%= @contact.regional_phone_number%></h1>
 
+<% @contact.groups.each do |group| %>
+<ul>
+  <li><a href="/contacts?group=<%= group.name %>"><%= group.name %></li>
+  <% end %>
+</ul>
+
 <%= link_to 'home', '/' %>
 <br>
 <%= link_to 'edit', "/contacts/#{@contact.id}/edit" %>

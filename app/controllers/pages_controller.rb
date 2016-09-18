@@ -2,6 +2,11 @@ class PagesController < ApplicationController
   before_action :authenticate_user!
   def index
     @contacts = Contact.all
+    group = params[:group]
+
+    if group
+      @contacts = Group.find_by(name: group).contacts
+    end
   end
 
   def new
@@ -21,6 +26,7 @@ class PagesController < ApplicationController
 
   def show
     @contact = Contact.find(params[:id])
+    @groups = @contact.groups
   end
 
   def edit
