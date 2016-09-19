@@ -3,7 +3,7 @@
 <h1><%= @contact.bio %></h1>
 <h1><%= @contact.email%></h1>
 <h1><%= @contact.regional_phone_number%></h1>
-
+<h3>Contact Groups:</h3>
 <% @contact.groups.each do |group| %>
 <ul>
   <li><a href="/contacts?group=<%= group.name %>"><%= group.name %></li>
